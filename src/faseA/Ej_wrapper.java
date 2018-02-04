@@ -1,4 +1,4 @@
-package pruebas;
+package faseA;
 
 import java.util.Scanner;
 

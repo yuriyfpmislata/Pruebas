@@ -1,4 +1,4 @@
-package pruebas;
+package faseA;
 
 public class Libro {
     private String titulo;

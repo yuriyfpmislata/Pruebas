@@ -1,4 +1,4 @@
-package pruebas;
+package faseA;
 
 public class Ej_static_nuevo {
 

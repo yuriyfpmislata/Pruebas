@@ -1,4 +1,4 @@
-package pruebas;
+package faseA;
 
 public class Excepcion_menor18_nombreInvalido extends RuntimeException {
 
