@@ -5,31 +5,47 @@ import java.util.StringTokenizer;
 public class Pruebas {
 
     public static void main(String[] args) {
-        String cadena = "este texto se dividirá en palabras";        
+        String texto= "dividir en palabras";      
         
-        /*
+        // *** StringTokenizer ***
         
-        //StringTokenizer
+        // por defecto
 
-        StringTokenizer troceado = new StringTokenizer(cadena);
+        StringTokenizer tokenizado = new StringTokenizer(texto);
         
-        while (troceado.hasMoreTokens()) {
-            System.out.println(troceado.nextToken());
+        System.out.println("> Tokenizado por defecto: ");
+        while (tokenizado.hasMoreTokens()) {
+            System.out.println(tokenizado.nextToken());
         }
         
-        */
+        // pasando delimitador
         
-        /* 
+        StringTokenizer tokenizadoDelimitador = new StringTokenizer(texto, "d");
         
-        //String.split()
+        System.out.println("> Tokenizado por delimitador: ");
+        while (tokenizadoDelimitador.hasMoreTokens()) {
+            System.out.println(tokenizadoDelimitador.nextToken());
+        }
         
-        String[] spliteado = cadena.split("\\s");
+        // pasando delimitador y devolviendolo
+        
+        StringTokenizer tokenizadoDelimitadorDevolver = new StringTokenizer(texto, "d", true);
+        
+        System.out.println("> Tokenizado por delimitador y devolviendolo: ");
+        while (tokenizadoDelimitadorDevolver.hasMoreTokens()) {
+            System.out.println(tokenizadoDelimitadorDevolver.nextToken());
+        }
+        
+        
+        // *** String.split() ***
+        
+        String[] spliteado = texto.split("\\s");
        
+        System.out.println("> Spliteado por espacios");
         for (String trozo : spliteado) {
             System.out.println(trozo);
         }
         
-        */
     }
 
 }
