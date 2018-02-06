@@ -1,7 +1,6 @@
 package faseB;
 
 import java.util.ArrayDeque;
-import java.util.Arrays;
 import java.util.Deque;
 import java.util.Iterator;
 
@@ -15,7 +14,7 @@ public class ej_trocear_17 {
         
         // para poder imprimir las palabras al reves
         // se puede usar un simple for inverso
-        for (int i = troceada.length - 1; i > -1; i--) {
+        for (int i = troceada.length - 1; i >= 0; i--) {
             // imprimir la palabra, añadiendo el espacio
             // (ya que .split() no tiene posibilidad de devolver el delimitador)
             System.out.print(troceada[i] + " ");
@@ -24,27 +23,28 @@ public class ej_trocear_17 {
         // formato
         System.out.println("");
         
-        // *** version ArrayDeque ***
-        
-        // crear el ArrayDeque pasandole al constructor el array "troceada"
-        // se usa el metodo Arrays.asList para facilitar la tarea
-        
+        // *** VERSION ARRAYDEQUE ***
+            
         Deque<String> troceadaDeque = new ArrayDeque<>();
         
-        for (int i = 0; i < troceada.length; i++) {
-            troceadaDeque.addLast(troceada[i]);
+        // añadir las palabras del array anterior al deque
+        // addFirst de modo que se vayan añadiendo en order inverso
+        for (String trozo : troceada) {
+            troceadaDeque.addFirst(trozo);
         }
         
         // recorrer el ArrayDeque
         
-        Iterator<String> it = troceadaDeque.iterator();
+        Iterator<String> it = troceadaDeque.iterator();        
         
         while (it.hasNext()) {
             // imprimir la palabra, añadiendo el espacio
             // (ya que .split() no tiene posibilidad de devolver el delimitador)
-            System.out.print(troceadaDeque.removeFirst() + " ");
+            System.out.print(it.next() + " ");
         }
         
+        // formato
+        System.out.println("");
     }
     
 }
