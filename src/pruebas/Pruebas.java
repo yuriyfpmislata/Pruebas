@@ -1,51 +1,11 @@
 package pruebas;
 
-import java.util.StringTokenizer;
-
 public class Pruebas {
 
     public static void main(String[] args) {
-        String texto= "dividir en palabras";      
+        Movil miMovil = new Movil("46478854848778");
         
-        // *** StringTokenizer ***
-        
-        // por defecto
-
-        StringTokenizer tokenizado = new StringTokenizer(texto);
-        
-        System.out.println("> Tokenizado por defecto: ");
-        while (tokenizado.hasMoreTokens()) {
-            System.out.println(tokenizado.nextToken());
-        }
-        
-        // pasando delimitador
-        
-        StringTokenizer tokenizadoDelimitador = new StringTokenizer(texto, "d");
-        
-        System.out.println("> Tokenizado por delimitador: ");
-        while (tokenizadoDelimitador.hasMoreTokens()) {
-            System.out.println(tokenizadoDelimitador.nextToken());
-        }
-        
-        // pasando delimitador y devolviendolo
-        
-        StringTokenizer tokenizadoDelimitadorDevolver = new StringTokenizer(texto, "d", true);
-        
-        System.out.println("> Tokenizado por delimitador y devolviendolo: ");
-        while (tokenizadoDelimitadorDevolver.hasMoreTokens()) {
-            System.out.println(tokenizadoDelimitadorDevolver.nextToken());
-        }
-        
-        
-        // *** String.split() ***
-        
-        String[] spliteado = texto.split("\\s");
-       
-        System.out.println("> Spliteado por espacios");
-        for (String trozo : spliteado) {
-            System.out.println(trozo);
-        }
-        
+        System.out.println("Mi movil tiene IMEI: " + miMovil.getImei() + " y su estado de encendido es: " + miMovil.estaEncendido());
     }
 
 }
