@@ -9,6 +9,7 @@ public class Movil implements APIMovil, APISmartphone {
 
     public Movil(String IMEI, String MAC) {
         this.IMEI = IMEI;
+        this.MAC = MAC;
     }
 
     @Override
