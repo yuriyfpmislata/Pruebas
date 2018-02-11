@@ -1,12 +1,14 @@
 package pruebas;
 
-public class Movil implements APIMovil{
+public class Movil implements APIMovil, APISmartphone {
 
     boolean encendido = false;
-    String imei;
-    
-    public Movil(String imei) {
-        this.imei = imei;
+    boolean conectado = false;
+    String IMEI;
+    String MAC;
+
+    public Movil(String IMEI, String MAC) {
+        this.IMEI = IMEI;
     }
 
     @Override
@@ -20,15 +22,42 @@ public class Movil implements APIMovil{
     }
 
     @Override
-    public String getImei() {
-        return imei;
+    public String getIMEI() {
+        return IMEI;
     }
 
     @Override
-    public void setImei(String imei) {
-        this.imei = imei;
+    public void setIMEI(String IMEI) {
+        this.IMEI = IMEI;
     }
-    
-    
-    
+
+    @Override
+    public String getMAC() {
+        return MAC;
+    }
+
+    @Override
+    public void setMAC(String MAC) {
+        this.MAC = MAC;
+    }
+
+    @Override
+    public boolean estaConectado() {
+        return conectado;
+    }
+
+    @Override
+    public void setConectado(boolean conectado) {
+        this.conectado = conectado;
+    }
+
+    @Override
+    public void conectarseInternet() {
+        this.conectado = true;
+    }
+
+    @Override
+    public void desconectarseInternet() {
+        this.conectado = true;
+    }
 }
