@@ -1,4 +1,4 @@
-package pruebas;
+package pruebas.interfaces;
 
 public interface APISmartphone {
     public String getMAC();

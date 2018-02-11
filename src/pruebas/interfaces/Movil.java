@@ -1,4 +1,4 @@
-package pruebas;
+package pruebas.interfaces;
 
 public class Movil implements APIMovil, APISmartphone {
 
